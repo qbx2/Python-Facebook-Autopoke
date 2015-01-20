@@ -1,6 +1,6 @@
-email = "" # string
-passwd = "" # string
-user = 0 # integer
+email = ""
+passwd = ""
+user = 0
 
 from pycurl import *
 import certifi
@@ -68,11 +68,13 @@ while True:
                 time.sleep(10)
 
         try:
-            name = x.parent.parent.parent.parent.find("i").parent['href'][1:]
-            print time.strftime("[%Y-%m-%d %H:%M:%S] ") + "Poked %s Back!"%name
+            i = x.parent.parent.parent.parent.find("i")
+            url = i.parent['href'][1:]
+            name = i['aria-label']
+            print time.strftime("[%Y-%m-%d %H:%M:%S] ") + "Poked %s (%s) Back!"%(name, url)
         except:
             traceback.print_exc()
 
         time.sleep(1)
 
-    #print "Sleep(10)"
+    time.sleep(10)
