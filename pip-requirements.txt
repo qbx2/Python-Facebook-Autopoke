@@ -1,0 +1,4 @@
+BeautifulSoup==3.2.1
+certifi==14.05.14
+pycurl==7.19.5.1
+wsgiref==0.1.2
